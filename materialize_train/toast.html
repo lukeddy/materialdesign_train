@@ -9,7 +9,11 @@
 <body>
   <nav class="blue darken-2">
       <div class="navbar-wrapper container">
-          <a href="#" class="brand-logo">品牌LOGO</a>
+          <a href="#" class="brand-logo">
+              <a id="logo-container" href="http://materializecss.com/" class="brand-logo">
+                  <img src="http://materializecss.com/res/materialize.svg" alt="">
+              </a>
+
 
           <ul class="right">
               <li>
@@ -32,7 +36,10 @@
 
               <a href="#!" class="btn waves-effect purple lighten-1" onclick="Materialize.toast('你好,我是小强',4000);"
               >点一下</a>
-
+              <a href="#!" class="btn waves-effect purple lighten-1" onclick="myfunc();"
+              >再点一下</a>
+              <a href="#!" class="btn waves-effect purple lighten-1" onclick="myanotherfunc();"
+              >再再点一下</a>
           </div>
       </div>
   </div>
@@ -42,3 +49,14 @@
 </html>
 <script src="//cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/materialize/0.97.5/js/materialize.min.js"></script>
+<script>
+    function  myfunc(){
+        var $toastContent = $('<span style="color:red;">I am toast content<img src="http://materializecss.com/res/materialize.svg"/> </span>');
+        Materialize.toast($toastContent, 5000);
+    }
+    function myanotherfunc(){
+        Materialize.toast('小强又来了', 3000,'',function(){
+            alert('我是Toast回调');
+        });
+    }
+</script>
